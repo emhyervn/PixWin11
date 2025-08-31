@@ -1,0 +1,72 @@
+/*
+=============== 
+Fonts:
+===============
+*/
+@font-face {
+	font-family: "mainFont-en";
+	src: url(../../assets/fonts/clas1065.ttf) format("truetype");
+}
+@font-face {
+	font-family: "mainFont-fa";
+	src: url(../../assets/fonts/Raqami.ttf) format("truetype");
+}
+/*
+=============== 
+CSS Variables:
+===============
+*/
+:root {
+	--pixel-en-font: "mainFont-en";
+	--pixel-fa-font: "mainFont-fa";
+}
+/*
+=============== 
+Global Styles:
+===============
+*/
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--pixel-en-font), var(--pixel-fa-font);
+	font-size: 3rem;
+	width: 100vw;
+	height: 100vh;
+	font-size: 0.875rem;
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+img {
+	width: 100%;
+	display: block;
+}
+/*
+=============== 
+Global Classes:
+===============
+*/
+/* 
+=============== 
+About (header):
+===============
+*/
+/* 
+=============== 
+Desktop (main):
+===============
+*/
+/* 
+=============== 
+Taskbar (footer):
+===============
+*/
