@@ -1,0 +1,218 @@
+/*
+=============== 
+Fonts:
+===============
+*/
+@font-face {
+	font-family: "mainFont-en";
+	src: url(../../assets/fonts/clas1065.ttf) format("truetype");
+}
+@font-face {
+	font-family: "mainFont-fa";
+	src: url(../../assets/fonts/Raqami.ttf) format("truetype");
+}
+/*
+=============== 
+CSS Variables:
+===============
+*/
+:root {
+	/* Fonts */
+	--pixel-en-font: "mainFont-en";
+	--pixel-fa-font: "mainFont-fa";
+	/* Font Size */
+	--font-size-xxs: 0.375rem; /* 6px */
+	--font-size-xs: 0.5rem; /* 8px */
+	--font-size-sm: 0.75rem; /* 12px */
+	--font-size-md: 1rem; /* 16px */
+	--font-size-lg: 1.5rem; /* 24px */
+	--font-size-xl: 2rem; /* 32px */
+	--font-size-xxl: 3rem; /* 48px */
+	--font-size-xxxl: 4rem; /* 64px */
+	/* Colors */
+	--taskbar-color: #00001f;
+	/* Transitions */
+	--transition-fast: all 0.3s linear;
+	--transition-slow: all 1.5s linear;
+}
+/*
+=============== 
+Global Styles:
+===============
+*/
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: var(--pixel-en-font), var(--pixel-fa-font);
+	font-size: var(--font-size-xxl);
+	width: 100vw;
+	height: 100vh;
+	font-size: var(--font-size-md);
+}
+ul {
+	list-style-type: none;
+}
+a {
+	text-decoration: none;
+}
+img {
+	width: 100%;
+	display: block;
+}
+
+/*
+=============== 
+Global Classes:
+===============
+*/
+/* 
+=============== 
+Copyright (header):
+===============
+*/
+.copyright {
+	width: 100vw;
+	height: 33vh;
+	position: absolute;
+	top: -33vh;
+	display: flex;
+	justify-content: flex-end;
+	gap: 0;
+	transition: var(--transition-fast);
+
+	.copyright-container {
+		position: relative;
+		width: 70%;
+	}
+	.binary-rain-bg {
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+		position: absolute;
+		top: 0;
+		right: 0;
+		opacity: 0.5;
+	}
+	.copyright-content {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		right: 0;
+		padding: 2vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border: solid 0.4vh white;
+		box-shadow: inset 0 0 10px 0 black;
+		text-shadow: 5px 5px 5px darkgreen, -5px 5px 5px darkgreen,
+			5px -5px 5px darkgreen, -5px -5px 5px darkgreen;
+		color: #0f0;
+		box-shadow: inset 0px 0px 10px 5px black;
+	}
+	p {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+	}
+	span {
+		font-size: calc(var(--font-size-sm) * 3);
+		font-weight: bold;
+		animation: colorChange 3s infinite linear;
+		text-shadow: 0px 0px 5px darkgreen;
+	}
+	.copyright-btn {
+		width: 7vh;
+		height: 7vh;
+		position: absolute;
+		bottom: -7vh;
+		right: 1vh;
+		transition: var(--transition-fast);
+		cursor: pointer;
+	}
+	.copyright-btn:hover {
+		transform: scale(1.1) translateY(0.3vh);
+		transition: var(--transition-fast);
+	}
+}
+
+@media screen and (max-height: 900px) {
+	.copyright {
+		p {
+			font-size: var(--font-size-sm);
+		}
+		span {
+			font-size: calc(var(--font-size-xs) * 3);
+		}
+	}
+}
+@media screen and (max-height: 500px) {
+	.copyright {
+		p {
+			font-size: var(--font-size-xs);
+		}
+		span {
+			font-size: calc(var(--font-size-xs) * 3);
+		}
+	}
+}
+
+@keyframes colorChange {
+	0%,
+	10%,
+	20%,
+	30%,
+	40% {
+		color: darkgreen;
+		scale: 1;
+	}
+	50%,
+	60% {
+		text-shadow: 5px 5px 5px darkgreen, -5px 5px 5px darkgreen,
+			5px -5px 5px darkgreen, -5px -5px 5px darkgreen;
+		color: #0f0;
+		scale: 1.2;
+	}
+
+	70%,
+	80%,
+	90%,
+	100% {
+		color: darkgreen;
+		scale: 1;
+	}
+}
+
+/* 
+=============== 
+Desktop (main):
+===============
+*/
+.desktop {
+	width: 100vw;
+	height: 93vh;
+	background: url("../../assets/images/backgrounds/dragon-pixel-bg.png");
+	background-size: cover;
+}
+
+/* 
+=============== 
+Taskbar (footer):
+===============
+*/
+.taskbar {
+	width: 100vw;
+	height: 7vh;
+	background: var(--taskbar-color);
+	box-shadow: inset -1px 1px 10px -5px white;
+}
