@@ -1,4 +1,5 @@
 "use strict";
+import {} from "../data/directory.js";
 
 // Show and hide copyright bar
 const copyrightBtn = document.querySelector(".copyright-btn");
@@ -16,12 +17,19 @@ copyrightBtn.addEventListener("click", () => {
 document.addEventListener("DOMContentLoaded", () => {
 	const canvas = document.getElementById("binaryRain");
 	const ctx = canvas.getContext("2d");
-	const fontSize = 10;
+	let fontSize = Math.trunc(window.innerWidth / 170);
 	const letters = "01";
 	let drops = [];
 	let resizeTimeout;
 
 	function setupCanvas() {
+		fontSize = Math.trunc(window.innerWidth / 170);
+
+		if (window.innerWidth / window.innerHeight >= 2 && fontSize > 7) {
+			fontSize -= 2;
+		} else if (window.innerHeight >= window.innerWidth / 2) {
+			fontSize += 2;
+		}
 		const parentWidth = canvas.parentElement.offsetWidth;
 		const parentHeight = canvas.parentElement.offsetHeight;
 		canvas.width = parentWidth;
@@ -56,6 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
 	// Debounce the resize event
 	window.addEventListener("resize", () => {
 		clearTimeout(resizeTimeout);
-		resizeTimeout = setTimeout(setupCanvas, 200);
+		resizeTimeout = setTimeout(setupCanvas, 300);
 	});
 });
+
+// Desktop grid
+for (let i = 0; i < 8 * 20; i++) {
+	const cell = document.createElement("div");
+	cell.className = `cell-${i}`;
+	document.querySelector(".desktop").appendChild(cell);
+	console.log(window.innerWidth);
+}
