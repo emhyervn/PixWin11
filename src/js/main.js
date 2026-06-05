@@ -162,9 +162,11 @@ function renderDesktopGrid() {
 	});
 
 	desktopInfo.forEach((infoString) => {
-		const element = `<div class="${infoString.split("|")[1]}"><div class="img-wrapper"><img class="${infoString.split("|")[2]}" src="${infoString.split(";")[1]}"></div><p class="${infoString.split("|")[3]}">${infoString.split(";")[2]}</p></div>`;
-		document.querySelector(`.cell-${infoString.split("|")[0]}`).innerHTML =
-			element;
+		const parts = infoString.split("|");
+		const srcAndLabel = infoString.split(";");
+		const fixedSrc = "/PixWin11/" + srcAndLabel[1].replace(/^\.\//, "");
+		const element = `<div class="${parts[1]}"><div class="img-wrapper"><img class="${parts[2]}" src="${fixedSrc}"></div><p class="${parts[3]}">${srcAndLabel[2]}</p></div>`;
+		document.querySelector(`.cell-${parts[0]}`).innerHTML = element;
 	});
 }
 renderDesktopGrid();
