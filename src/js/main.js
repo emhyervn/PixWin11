@@ -77,10 +77,10 @@ const documentElement = document.documentElement; // The whole document
 const desktop = document.querySelector(".desktop");
 // desktop icons array
 const desktopInfo = [
-	"0|shortcut|shortcut-icon|shortcut-name|;../../assets/images/icons/controlPanelIcon.png;Control Panel",
-	"1|shortcut|shortcut-icon|shortcut-name|;../../assets/images/icons/thisPCIcon.png;This PC",
-	"2|desktop-item|shortcut-icon|shortcut-name|;../../assets/images/icons/recycleBinEmptyIcon.png;Recycle Bin",
-	"3|desktop-item|shortcut-icon fullscreen-button|shortcut-name|;../../assets/images/icons/fullscreenIcon.png;Fullscreen",
+	"0|shortcut|shortcut-icon|shortcut-name|;/assets/images/icons/controlPanelIcon.png;Control Panel",
+	"1|shortcut|shortcut-icon|shortcut-name|;./assets/images/icons/thisPCIcon.png;This PC",
+	"2|desktop-item|shortcut-icon|shortcut-name|;/assets/images/icons/recycleBinEmptyIcon.png;Recycle Bin",
+	"3|desktop-item|shortcut-icon fullscreen-button|shortcut-name|;/assets/images/icons/fullscreenIcon.png;Fullscreen",
 ];
 
 function renderDesktopGrid() {
