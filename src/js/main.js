@@ -162,16 +162,14 @@ function renderDesktopGrid() {
 	});
 
 	desktopInfo.forEach((infoString) => {
-		const parts = infoString.split("|");
-		const srcAndLabel = infoString.split(";");
-		const originalSrc = srcAndLabel[1];
-		const fixedSrc =
-			(window.location.hostname === "emhyervn.github.io"
-				? "/PixWin11/"
-				: "") + originalSrc.replace(/^\.?\//, "");
-		const element = `<div class="${parts[1]}"><div class="img-wrapper"><img class="${parts[2]}" src="${fixedSrc}"></div><p class="${parts[3]}">${srcAndLabel[2]}</p></div>`;
-		document.querySelector(`.cell-${parts[0]}`).innerHTML = element;
-	});
+    const parts = infoString.split("|");
+    const srcAndLabel = infoString.split(";");
+    const imageFile = srcAndLabel[1].split('/').pop(); // gets just filename
+    const prefix = window.location.hostname === 'emhyervn.github.io' ? '/PixWin11' : '';
+    const fixedSrc = `${prefix}/assets/images/icons/${imageFile}`;
+    const element = `<div class="${parts[1]}"><div class="img-wrapper"><img class="${parts[2]}" src="${fixedSrc}"></div><p class="${parts[3]}">${srcAndLabel[2]}</p></div>`;
+    document.querySelector(`.cell-${parts[0]}`).innerHTML = element;
+});
 }
 renderDesktopGrid();
 
