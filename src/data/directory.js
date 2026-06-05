@@ -1,7 +1,7 @@
 export const directory = {
 	root: {
 		user: {
-			info: ["user", "folder", "../../assets/images/icons/fileIcon.png"],
+			info: ["user", "folder", "./assets/images/icons/fileIcon.png"],
 		},
 	},
 };
