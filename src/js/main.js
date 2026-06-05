@@ -164,7 +164,11 @@ function renderDesktopGrid() {
 	desktopInfo.forEach((infoString) => {
 		const parts = infoString.split("|");
 		const srcAndLabel = infoString.split(";");
-		const fixedSrc = "/PixWin11/" + srcAndLabel[1].replace(/^\.\//, "");
+		const originalSrc = srcAndLabel[1];
+		const fixedSrc =
+			(window.location.hostname === "emhyervn.github.io"
+				? "/PixWin11/"
+				: "") + originalSrc.replace(/^\.?\//, "");
 		const element = `<div class="${parts[1]}"><div class="img-wrapper"><img class="${parts[2]}" src="${fixedSrc}"></div><p class="${parts[3]}">${srcAndLabel[2]}</p></div>`;
 		document.querySelector(`.cell-${parts[0]}`).innerHTML = element;
 	});
