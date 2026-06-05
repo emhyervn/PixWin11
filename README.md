@@ -18,7 +18,8 @@ This project follows a logical and modern file structure to keep all assets and 
 │ ├── css/
 │ │ └── main.css
 │ └── js/
-│ └── main.js
+│ | └── main.js
+| └── libraries/
 ├── index.html
 └── README.md
 
