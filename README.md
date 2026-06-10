@@ -35,11 +35,8 @@ Simply open the index.html file in your preferred web browser to view the websit
 
 ## Built With:
 1.HTML5
-2.CSS3 (via a preprocessor like Sass or Less, as indicated by the .css.map file)
+2.CSS3
 3.JavaScript
-
-## License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 Acknowledgments
 (Any other resources, libraries, or tutorials you'd like to acknowledge)
