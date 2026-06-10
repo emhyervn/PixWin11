@@ -1,9 +1,4 @@
----
-title: "PixWin11"
-author: "Emhyr"
-date: "`r Sys.Date()`"
-output: html_document
----
+# PixWin11
 A creative digital project showcasing a passion for pixel art and web development. This website serves as a portfolio or a collection of digital creations, built with a clean and organized structure to ensure scalability and ease of maintenance.
 
 ## File Structure
